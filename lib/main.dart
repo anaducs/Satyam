@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: Size(360, 690),
+        designSize: const Size(360, 690),
         builder: (context, child) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
                   primary: GlobalVariables.secondaryColor,
                 )),
             onGenerateRoute: (settings) => generateRoute(settings),
-            home: AuthScreen(),
+            home: const AuthScreen(),
           );
         });
   }

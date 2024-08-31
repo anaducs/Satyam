@@ -1,7 +1,5 @@
 import 'dart:convert';
 
-import 'package:flutter/cupertino.dart';
-
 class User {
   final String id;
   final String name;
@@ -39,7 +37,7 @@ class User {
       token: map['token'] ?? '',
     );
   }
-  String toJson()=>json.encode(toMap());
+  String toJson() => json.encode(toMap());
   factory User.fromJson(String source) => User.fromMap(json.decode(source));
 
   User copyWith({
