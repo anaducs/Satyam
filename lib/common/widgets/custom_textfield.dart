@@ -5,27 +5,37 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class CustomTextfield extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
-  const CustomTextfield({super.key, required this.controller, required this.hintText});
+  final bool isPassword;
+
+  const CustomTextfield(
+      {super.key,
+      required this.controller,
+      required this.hintText,
+      this.isPassword = false});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller:controller,
+      controller: controller,
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: GlobalVariables.subBodyStyle,
         border: const OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.blue),
+          borderSide: BorderSide(color: Colors.black),
         ),
         enabledBorder: const OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.red),
-        ),
-        focusedBorder: const OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.green),
+          borderSide: BorderSide(color: Colors.black),
         ),
       ),
-      validator: (val){
+      validator: (val) {
+        if (val == null || val.isEmpty) {
+          return 'Enter your $hintText';
+        }
+        if(isPassword && val.length<6){
+          return '$hintText must be min 6 character';
+        }
 
+        return null;
       },
     );
   }
