@@ -4,9 +4,9 @@ import 'package:satyam/features/auth/screen/auth_screen.dart';
 Route<dynamic> generateRoute(RouteSettings routeSetting) {
   switch (routeSetting.name) {
     case AuthScreen.routeName:
-        return MaterialPageRoute(
-          settings: routeSetting,
-          builder: (_) => AuthScreen(),
+      return MaterialPageRoute(
+        settings: routeSetting,
+        builder: (_) => const AuthScreen(),
       );
     default:
       return MaterialPageRoute(

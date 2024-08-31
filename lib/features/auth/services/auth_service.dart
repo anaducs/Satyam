@@ -42,4 +42,11 @@ class AuthService {
       }
     }
   }
+  void signInUser({
+    required BuildContext context,
+    required String email,
+    required String password,
+  })async{
+    
+  }
 }

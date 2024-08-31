@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:satyam/constants/global_variable.dart';
+// ignore: unused_import
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextfield extends StatelessWidget {
@@ -31,7 +32,7 @@ class CustomTextfield extends StatelessWidget {
         if (val == null || val.isEmpty) {
           return 'Enter your $hintText';
         }
-        if(isPassword && val.length<6){
+        if (isPassword && val.length < 6) {
           return '$hintText must be min 6 character';
         }
 
